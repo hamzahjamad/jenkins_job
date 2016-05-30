@@ -8,7 +8,7 @@ For this time the script must be running the variable sequence correctly, or els
 
 
 for example (in windows)    
-sh jenkin_job.sh 'jenkin_username' 'jenkin_user_api_token' 'new_job_name' 'job_name_to_copy' jenkin.test:8080 'jenkin_project_token' 'bitbucket_username' 'bitbucket_password' 'bitbucket_repository_name' 'jenkin_project_name'
+sh jenkins_job.sh 'jenkin_username' 'jenkin_user_api_token' 'new_job_name' 'job_name_to_copy' jenkin.test:8080 'jenkin_project_token' 'bitbucket_username' 'bitbucket_password' 'bitbucket_repository_name' 'jenkin_project_name'
 
 ## PLEASE NOTE
 'new_job_name' and 'job_name_to_copy' need to be url encoded first  
