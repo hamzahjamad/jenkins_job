@@ -1,0 +1,6 @@
+[submodule "autocopy_jenkin_jobs"]
+	path = autocopy_jenkin_jobs
+	url = https://github.com/hamzahjamad/autocopy_jenkin_jobs.git
+[submodule "autocreate_bitbucket_service"]
+	path = autocreate_bitbucket_service
+	url = https://github.com/hamzahjamad/autocreate_bitbucket_service.git
