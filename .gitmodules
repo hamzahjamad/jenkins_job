@@ -4,3 +4,6 @@
 [submodule "autocreate_bitbucket_service"]
 	path = autocreate_bitbucket_service
 	url = https://github.com/hamzahjamad/autocreate_bitbucket_service.git
+[submodule "autocreate_github_service"]
+	path = autocreate_github_service
+	url = https://github.com/hamzahjamad/autocreate_github_service
