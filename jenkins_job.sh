@@ -10,6 +10,10 @@ jenkinsscript(){
 
 	gitprovider=$7
 
+	#create a new git user credential
+	 curl --user $1:$2 -G http://$3/scriptler/run/createNewGitUserScript.groovy --data-urlencode "username=$5" --data-urlencode "password=$6"                                                                                                 
+
+	#copy the default jobs
 	sh autocopy_jenkin_jobs/jenkin_copy_job.sh $1 $2 $newunittestjob $unittestjob $3 $4 $5 $6 $gitprovider
 	sh autocopy_jenkin_jobs/jenkin_copy_job.sh $1 $2 $newdeployjob $deployjob $3 $4 $5 $6 $gitprovider
 
