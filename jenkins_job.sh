@@ -9,13 +9,14 @@ newdeployjob=$deployjob$6
 jenkinsscript(){
 
 	gitprovider=$7
+	gitpassword=$8
 
 	#create a new git user credential
-	curl --user $1:$2 -G http://$3/scriptler/run/createNewGitUserScript.groovy --data-urlencode "username=$5" --data-urlencode "password=$6"                                                                                                 
+	curl --user $1:$2 -G http://$3/scriptler/run/createNewGitUserScript.groovy --data-urlencode "username=$5" --data-urlencode "password=$gitpassword"                                                                                                 
 
 	#copy the default jobs
-	sh autocopy_jenkin_jobs/jenkin_copy_job.sh $1 $2 $newunittestjob $unittestjob $3 $4 $5 $6 $gitprovider "--job1"
-	sh autocopy_jenkin_jobs/jenkin_copy_job.sh $1 $2 $newdeployjob $deployjob $3 $4 $5 $6 $gitprovider "--job2"
+	sh autocopy_jenkin_jobs/jenkin_copy_job.sh $1 $2 $newunittestjob $unittestjob $3 $4 $5 $6 $gitprovider 
+	sh autocopy_jenkin_jobs/jenkin_copy_job.sh $1 $2 $newdeployjob $deployjob $3 $4 $5 $6 $gitprovider 
 
 }
 
@@ -28,7 +29,7 @@ bitbucketscript(){
 	bitbucketpassword=$6 
 	bitbucketrepositoryname=$7
 
-	jenkinsscript $jenkinusername $jenkinuserapitoken $jenkinurl $jenkinprojecttoken $bitbucketusername $bitbucketrepositoryname --bitbucket
+	jenkinsscript $jenkinusername $jenkinuserapitoken $jenkinurl $jenkinprojecttoken $bitbucketusername $bitbucketrepositoryname --bitbucket $bitbucketpassword
 	sh autocreate_bitbucket_service/bitbucket_service.sh $bitbucketusername $bitbucketpassword $bitbucketrepositoryname $jenkinurl $jenkinprojecttoken $newunittestjob
 
 }
